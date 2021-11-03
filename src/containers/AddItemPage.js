@@ -1,18 +1,28 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import MainPageHeader from "../components/MainPageHeader";
 
 class AddItemPage extends Component {
     render() {
         return(
             <div>
+                <MainPageHeader/>
                 <div>
-                    <img/>
+                    <h3>Add a new framework</h3>
                 </div>
                 <div>
-                    <h3>Javascript Frameworks</h3>
+                    <form>
+                        <p>Framework Name:</p>
+                        <input type="field"/>
+                        <p>Docs URL:</p>
+                        <input type="field"/>
+                        <p>Lead By:</p>
+                        <input type="field"/>
+                    </form>
                 </div>
                 <div>
-                    <Link>Add New Item</Link>
+                    <Link>Save</Link>
+                    <Link>Cancel</Link>
                 </div>
             </div>
             

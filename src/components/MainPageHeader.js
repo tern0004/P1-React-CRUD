@@ -6,13 +6,13 @@ class MainPageHeader extends Component {
         return(
             <div>
                 <div>
-                    <img/>
+                    <Link to="/"><img src="../../public/logo192.png" alt="logo"/></Link>
                 </div>
                 <div>
                     <h3>Javascript Frameworks</h3>
                 </div>
                 <div>
-                    <Link>Add New Item</Link>
+                    <Link to="/add">Add New Item</Link>
                 </div>
             </div>
             
