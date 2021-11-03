@@ -1,10 +1,11 @@
 
 import './App.css';
 import React, {Component} from "react";
-import {Route, Switch} from "react-router-dom";
+
 import MainPage from './containers/MainPage';
 import AddItemPage from './containers/AddItemPage';
 import PageNotFound from './containers/PageNotFound';
+import {Route, Switch} from "react-router-dom";
 
 
 class App extends Component {
