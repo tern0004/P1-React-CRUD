@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import MainPageHeader from "../components/MainPageHeader";
+import {Button} from "@mui/material";
 
 class AddItemPage extends Component {
     render() {
@@ -21,8 +21,8 @@ class AddItemPage extends Component {
                     </form>
                 </div>
                 <div>
-                    <Link>Save</Link>
-                    <Link>Cancel</Link>
+                    <Button>Save</Button>
+                    <Button>Cancel</Button>
                 </div>
             </div>
             

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import MainPageHeader from "./MainPageHeader";
+import {Button} from "@mui/material";
 
 class ItemElement extends Component {
     render() {
@@ -15,12 +15,8 @@ class ItemElement extends Component {
                     <Link>Official docs</Link>
                 </div>
                 <div>
-                    <div>
-                        <p>Edit</p>
-                    </div>
-                    <div>
-                        <p>Delete</p>
-                    </div>
+                        <Button onClick="">Edit</Button>
+                        <Button onClick="">Delete</Button>
                 </div>
             </div>
             
