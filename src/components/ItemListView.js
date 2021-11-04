@@ -1,17 +1,19 @@
 import React, {Component} from "react";
 import ItemElement from "./ItemElement";
+import {Grid} from "@mui/material";
 
 class ItemListView extends Component {
     render() {
         return(
-            <div>
-                <div>
-                    <ItemElement/>
-                    <ItemElement/>
-                    <ItemElement/>
-                    <ItemElement/>
-                </div>
-            </div>
+                <Grid  container  justifyContent="center"  spacing={3}>
+                    <Grid  item xs={8} >
+                        <ItemElement/>
+                    </Grid>
+                    <Grid item xs={8} >
+                        <ItemElement/>
+                    </Grid>
+
+                </Grid>
             
         )
     }
