@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import MainPageHeader from "../components/MainPageHeader";
-import {Button} from "@mui/material";
+import {Button, TextField} from "@mui/material";
 
 class AddItemPage extends Component {
     render() {
@@ -12,17 +12,14 @@ class AddItemPage extends Component {
                 </div>
                 <div>
                     <form>
-                        <p>Framework Name:</p>
-                        <input type="field"/>
-                        <p>Docs URL:</p>
-                        <input type="field"/>
-                        <p>Lead By:</p>
-                        <input type="field"/>
+                        <TextField id="outlined-basic" label="Framework Name" variant="outlined"/>
+                        <TextField id="outlined-basic" label="Docs URL" variant="outlined"/>
+                        <TextField id="outlined-basic" label="Lead by" variant="outlined"/>
                     </form>
                 </div>
                 <div>
-                    <Button>Save</Button>
-                    <Button>Cancel</Button>
+                    <Button variant="outlined" color="success">Save</Button>
+                    <Button variant="outlined" color="error">Cancel</Button>
                 </div>
             </div>
             

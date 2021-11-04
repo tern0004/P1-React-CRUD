@@ -15,8 +15,8 @@ class ItemElement extends Component {
                     <Link>Official docs</Link>
                 </div>
                 <div>
-                        <Button onClick="">Edit</Button>
-                        <Button onClick="">Delete</Button>
+                        <Button  color="success" onClick="">Edit</Button>
+                        <Button  color="error" onClick="">Delete</Button>
                 </div>
             </div>
             
