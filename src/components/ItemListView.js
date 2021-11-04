@@ -7,10 +7,10 @@ class ItemListView extends Component {
         return(
                 <Grid  container  justifyContent="center"  spacing={3}>
                     <Grid  item xs={8} >
-                        <ItemElement/>
+                        <ItemElement frameworkName="Angular" leadBy="Google" docs="https://angular.io"/>
                     </Grid>
                     <Grid item xs={8} >
-                        <ItemElement/>
+                        <ItemElement frameworkName="React" leadBy="Facebook" docs="https://reactjs.org"/>
                     </Grid>
 
                 </Grid>
