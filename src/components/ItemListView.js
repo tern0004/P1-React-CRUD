@@ -1,35 +1,40 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ItemElement from "./ItemElement";
 import {Grid} from "@mui/material";
-import ItemElementAPI from "../functions/ItemElementAPI";
+
 
 function ItemListView() {
-    /*
-    state = {
-        framework: null
-    };
+    let frameworks = JSON.parse(localStorage.getItem('frameworks'))
+    let [frameworkName,setFrameworkName]= useState(null)
+    let [leadBy, setLeadBy] = useState(null)
+    let [docs,setDocs] = useState(null)
 
-     componentDidMount() {
-       let frameworks =  ItemElementAPI.getAllItemElementsFromLocalStorage()
+    useEffect( () => {
+        frameworks = JSON.parse(localStorage.getItem('frameworks'))
         if(frameworks != null) {
-            frameworks.forEach(framework => {
-                this.setState({framework: framework})
-            })
-
-            console.log(this.state)
+        frameworks.forEach(framework => {
+            setFrameworkName(framework.frameworkName)
+            setLeadBy(framework.leadBy)
+            setDocs(framework.docs)
+            //console.log(frameworkName, leadBy, docs)
+        })
         }
+        //console.log()
+    })
 
-
-    }
-*/
         return(
                 <Grid  container  justifyContent="center"  spacing={3}>
-                    <Grid  item xs={8} >
-                        <ItemElement frameworkName="Angular" leadBy="Google" docs="https://angular.io"/>
-                    </Grid>
-                    <Grid item xs={8} >
-                        <ItemElement frameworkName="React" leadBy="Facebook" docs="https://reactjs.org"/>
-                    </Grid>
+                    {
+
+                            frameworks.map((framework, index) => {
+
+                               return(
+                                   <Grid  item xs={8} >
+                                    <ItemElement key={index} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
+                                </Grid>
+                               )
+                            })
+                    }
 
                 </Grid>
             

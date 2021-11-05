@@ -10,9 +10,9 @@ function ItemElement() {
         return(
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
-                    <Typography variant="h5" component="div"> {this.props.frameworkName} </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary"> Lead by {this.props.leadBy} </Typography>
-                    <Link href={this.props.docs} underline="none"> Official Docs </Link>
+                    <Typography variant="h5" component="div"> AAA </Typography>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary"> Lead by AAA </Typography>
+                    <Link href="/#" underline="none"> Official Docs </Link>
                 </CardContent>
                 <CardActions>
                     <Button variant="outlined" color="success" size="small">Edit</Button>
