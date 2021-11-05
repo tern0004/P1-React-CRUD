@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, {Component} from "react";
+import React from "react";
 
 import MainPage from './containers/MainPage';
 import AddItemPage from './containers/AddItemPage';
@@ -8,8 +8,7 @@ import PageNotFound from './containers/PageNotFound';
 import {Route, Switch} from "react-router-dom";
 
 
-class App extends Component {
-  render() {
+function App() {
     return (
         <div className="App">
           <Switch>
@@ -19,7 +18,6 @@ class App extends Component {
           </Switch>
         </div>
     );
-  }
 }
 
 export default App;

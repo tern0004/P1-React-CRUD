@@ -1,9 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import ItemListView from "../components/ItemListView";
 import MainPageHeader from "../components/MainPageHeader";
 
-class MainPage extends Component {
-    render() {
+function MainPage() {
         return(
             <div>
                 <div>
@@ -12,11 +11,7 @@ class MainPage extends Component {
                 <div>
                     <ItemListView/>
                 </div>
-                <div>
-                    
-                </div>
             </div>
         )
-    }
 } 
 export default MainPage;

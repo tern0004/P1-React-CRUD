@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,8 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-class MainPageHeader extends Component {
-    render() {
+function MainPageHeader() {
         return(
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
@@ -32,6 +31,5 @@ class MainPageHeader extends Component {
             </Box>
             
         )
-    }
 } 
 export default MainPageHeader;

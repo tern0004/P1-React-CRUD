@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -6,8 +6,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {Link} from "@mui/material";
 
-class ItemElement extends Component {
-    render() {
+function ItemElement() {
         return(
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
@@ -21,6 +20,5 @@ class ItemElement extends Component {
                 </CardActions>
             </Card>
         )
-    }
 } 
 export default ItemElement;
