@@ -13,7 +13,6 @@ class AddItemPage extends Component {
     addToLocalStorage(name,leadBy,docs) {
         let framework = {frameworkName: name, leadBy: leadBy, docs: docs}
         ItemElementAPI.addItemElementToLocalStorage(framework);
-        console.log(framework)
     }
     getFrameworkName(event) {
         this.setState({frameworkName: event.target.value})

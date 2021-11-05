@@ -10,6 +10,10 @@ const ItemElementAPI = {
         frameworks.push(framework)
         localStorage.setItem("frameworks", JSON.stringify(frameworks))
     },
+
+    getAllItemElementsFromLocalStorage: () => {
+        return JSON.parse(localStorage.getItem("frameworks"))
+    }
     /*removeItemElementFromLocalStorage:  (framework) => {
         let frameworks
         if(localStorage.getItem("frameworks") === null) {

@@ -1,8 +1,26 @@
 import React, {Component} from "react";
 import ItemElement from "./ItemElement";
 import {Grid} from "@mui/material";
+import ItemElementAPI from "../functions/ItemElementAPI";
 
 class ItemListView extends Component {
+    state = {
+        framework: null
+    };
+
+     componentDidMount() {
+       let frameworks =  ItemElementAPI.getAllItemElementsFromLocalStorage()
+        if(frameworks != null) {
+            frameworks.forEach(framework => {
+                this.setState({framework: framework})
+            })
+
+            console.log(this.state)
+        }
+
+
+    }
+
     render() {
         return(
                 <Grid  container  justifyContent="center"  spacing={3}>
