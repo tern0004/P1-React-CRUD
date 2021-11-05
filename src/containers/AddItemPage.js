@@ -1,33 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import MainPageHeader from "../components/MainPageHeader";
 import {Button, TextField} from "@mui/material";
 import ItemElementAPI from "../functions/ItemElementAPI";
 
 function AddItemPage() {
 
-   /* state = {
-        frameworkName: null,
-        leadBy: null,
-        docs: null,
-    };*/
-    function addToLocalStorage(name,leadBy,docs) {
-        let framework = {frameworkName: name, leadBy: leadBy, docs: docs}
+    let [frameworkName,SetName]= useState(null)
+    let [leadBy, SetLeadBy] = useState(null)
+    let [docs,SetDocs] = useState(null)
+
+    function addToLocalStorage(name, LeadBy, Docs) {
+        let framework = {frameworkName: name, leadBy: LeadBy, docs: Docs}
         ItemElementAPI.addItemElementToLocalStorage(framework);
     }
+
     function getFrameworkName(event) {
-        this.setState({frameworkName: event.target.value})
+        SetName(event.target.value)
     }
+
     function getLeadBy(event) {
-        this.setState({leadBy: event.target.value})
+        SetLeadBy(event.target.value)
     }
     function getDocs(event) {
-        this.setState({docs: event.target.value})
+        SetDocs(event.target.value)
     }
-    function handleSubmit() {
-        const frameworkName = this.state.frameworkName
-        const leadBy = this.state.leadBy
-        const docs = this.state.docs
 
+
+    function handleSubmit() {
+        console.log(frameworkName)
         addToLocalStorage(frameworkName,leadBy,docs)
     }
 
@@ -39,13 +39,14 @@ function AddItemPage() {
                 </div>
                 <div>
                     <form>
-                        <TextField id="outlined-basic" label="Framework Name" variant="outlined" onChange={(event) => {this.getFrameworkName(event)}}/>
-                        <TextField id="outlined-basic" label="Lead by" variant="outlined" onChange={(event) => {this.getLeadBy(event)}}/>
-                        <TextField id="outlined-basic" label="Docs URL" variant="outlined" onChange={(event) => {this.getDocs(event)}}/>
+                        <TextField id="outlined-basic" label="Framework Name" variant="outlined" onChange={event => getFrameworkName(event)}/>
+                        <TextField id="outlined-basic" label="Lead by" variant="outlined" onChange={event => getLeadBy(event)}/>
+                        <TextField id="outlined-basic" label="Docs URL" variant="outlined" onChange={event => getDocs(event)}/>
                     </form>
                 </div>
                 <div>
                     <Button variant="outlined" color="success" onClick={() => {
+                        //console.log(useState)
                         handleSubmit()
                     }}>Save</Button>
                     <Button variant="outlined" color="error">Cancel</Button>
