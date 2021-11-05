@@ -26,12 +26,12 @@ function ItemListView() {
                 <Grid  container  justifyContent="center"  spacing={3}>
                     {
 
-                            frameworks.map((framework, index) => {
-
+                            frameworks.map((framework, key) => {
                                return(
                                    <Grid  item xs={8} >
-                                    <ItemElement key={index} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
+                                    <ItemElement key={key} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
                                 </Grid>
+
                                )
                             })
                     }

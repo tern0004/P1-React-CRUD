@@ -6,7 +6,17 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {Link} from "@mui/material";
 
-function ItemElement({frameworkName, leadBy, docs}) {
+function ItemElement({key, frameworkName, leadBy, docs}) {
+
+    function handleClick() {
+        let frameworks = JSON.parse(localStorage.getItem('frameworks'))
+        if (frameworks != null) {
+            let newFrameworks = frameworks.splice(key, 1)
+            //frameworks = newFrameworks
+            console.log(key)
+        }
+    }
+
         return(
             <Card sx={{ minWidth: 275 }}>
                 <CardContent>
@@ -15,8 +25,8 @@ function ItemElement({frameworkName, leadBy, docs}) {
                     <Link href={docs} underline="none"> Official Docs </Link>
                 </CardContent>
                 <CardActions>
-                    <Button variant="outlined" color="success" size="small">Edit</Button>
-                    <Button variant="outlined" color="error" size="small">Delete</Button>
+                    <Button variant="outlined" color="success" size="small" href={`/edit/${key}`}>Edit</Button>
+                    <Button variant="outlined" color="error" size="small" onClick={(event) => {handleClick()}}>Delete</Button>
                 </CardActions>
             </Card>
         )
