@@ -28,8 +28,8 @@ function ItemListView() {
 
                             frameworks.map((framework, key) => {
                                return(
-                                   <Grid  item xs={8} >
-                                    <ItemElement key={key} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
+                                   <Grid key={key} item xs={8} >
+                                    <ItemElement id={key} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
                                 </Grid>
 
                                )
