@@ -19,23 +19,28 @@ function ItemListView() {
         })
         }
     })
+    if(frameworks != null) {
+        return (
+            <Grid container justifyContent="center" spacing={3}>
+                {
+                    frameworks.map((framework, key) => {
+                        return (
+                            <Grid key={key} item xs={8}>
+                                <ItemElement id={key} frameworkName={framework.frameworkName} leadBy={framework.leadBy}
+                                             docs={framework.docs}/>
+                            </Grid>
 
-        return(
-                <Grid  container  justifyContent="center"  spacing={3}>
-                    {
+                        )
+                    })
+                }
 
-                            frameworks.map((framework, key) => {
-                               return(
-                                   <Grid key={key} item xs={8} >
-                                    <ItemElement id={key} frameworkName={framework.frameworkName} leadBy={framework.leadBy} docs={framework.docs}/>
-                                </Grid>
+            </Grid>
 
-                               )
-                            })
-                    }
-
-                </Grid>
-            
         )
+    } else {
+        return (
+            <div>Add some frameworks</div>
+        )
+    }
 } 
 export default ItemListView;

@@ -33,7 +33,6 @@ function EditItemPage() {
         frameworks = JSON.parse(localStorage.getItem('frameworks'))
         index = window.location.pathname.split('/')[2]
 
-        console.log(frameworks[index].frameworkName,frameworks[index].leadBy, frameworks[index].docs)
     })
 
     return(
