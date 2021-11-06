@@ -16,10 +16,8 @@ function ItemListView() {
             setFrameworkName(framework.frameworkName)
             setLeadBy(framework.leadBy)
             setDocs(framework.docs)
-            //console.log(frameworkName, leadBy, docs)
         })
         }
-        //console.log()
     })
 
         return(

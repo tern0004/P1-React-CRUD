@@ -45,11 +45,8 @@ function AddItemPage() {
                     </form>
                 </div>
                 <div>
-                    <Button variant="outlined" color="success" onClick={() => {
-                        //console.log(useState)
-                        handleSubmit()
-                    }}>Save</Button>
-                    <Button variant="outlined" color="error">Cancel</Button>
+                    <Button variant="outlined" color="success" href='/' onClick={() => {handleSubmit()}}>Save</Button>
+                    <Button variant="outlined" color="error" href='/'>Cancel</Button>
                 </div>
             </div>
             

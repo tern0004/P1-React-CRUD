@@ -1,17 +1,18 @@
 import MainPageHeader from "../components/MainPageHeader";
 import {Button, TextField} from "@mui/material";
-import React, {useState} from "react";
-import ItemElementAPI from "../functions/ItemElementAPI";
+import React, {useEffect, useState} from "react";
 
 function EditItemPage() {
-
+    let frameworks, index
     let [frameworkName,SetName]= useState(null)
     let [leadBy, SetLeadBy] = useState(null)
     let [docs,SetDocs] = useState(null)
 
     function addToLocalStorage(name, LeadBy, Docs) {
         let framework = {frameworkName: name, leadBy: LeadBy, docs: Docs}
-        ItemElementAPI.addItemElementToLocalStorage(framework);
+        frameworks[index] = framework
+        console.log(frameworks)
+        localStorage.setItem('frameworks', JSON.stringify(frameworks))
     }
 
     function getFrameworkName(event) {
@@ -26,15 +27,20 @@ function EditItemPage() {
     }
 
     function handleSubmit() {
-        console.log(frameworkName)
         addToLocalStorage(frameworkName,leadBy,docs)
     }
+    useEffect(() => {
+        frameworks = JSON.parse(localStorage.getItem('frameworks'))
+        index = window.location.pathname.split('/')[2]
+
+        console.log(frameworks[index].frameworkName,frameworks[index].leadBy, frameworks[index].docs)
+    })
 
     return(
         <div>
             <MainPageHeader/>
             <div>
-                <h3>Add a new framework</h3>
+                <h3>Edit framework</h3>
             </div>
             <div>
                 <form>
@@ -44,11 +50,8 @@ function EditItemPage() {
                 </form>
             </div>
             <div>
-                <Button variant="outlined" color="success" onClick={() => {
-                    //console.log(useState)
-                    handleSubmit()
-                }}>Save</Button>
-                <Button variant="outlined" color="error">Cancel</Button>
+                <Button variant="outlined" color="success" href='/' onClick={() => {handleSubmit()}}>Save</Button>
+                <Button variant="outlined" color="error" href='/'>Cancel</Button>
             </div>
         </div>
 
