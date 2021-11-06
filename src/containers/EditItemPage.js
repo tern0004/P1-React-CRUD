@@ -49,7 +49,7 @@ function EditItemPage() {
                 </form>
             </div>
             <div>
-                <Button variant="outlined" color="success" href='/' onClick={() => {handleSubmit()}}>Save</Button>
+                <Button variant="outlined" color="success" href='/' onClick={ () => { handleSubmit() } }>Save</Button>
                 <Button variant="outlined" color="error" href='/'>Cancel</Button>
             </div>
         </div>
