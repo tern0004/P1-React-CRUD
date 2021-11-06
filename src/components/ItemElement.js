@@ -12,7 +12,7 @@ function ItemElement({id, frameworkName, leadBy, docs}) {
         let frameworks = JSON.parse(localStorage.getItem('frameworks'))
         if (frameworks != null) {
             frameworks.splice(id,1)
-            //frameworks = newFrameworks
+            localStorage.setItem('frameworks', JSON.stringify(frameworks))
             console.log(frameworks)
         }
     }
@@ -26,7 +26,7 @@ function ItemElement({id, frameworkName, leadBy, docs}) {
                 </CardContent>
                 <CardActions>
                     <Button variant="outlined" color="success" size="small" href={`/edit/${id}`}>Edit</Button>
-                    <Button variant="outlined" color="error" size="small" onClick={(event) => {handleClick()}}>Delete</Button>
+                    <Button variant="outlined" color="error" size="small" href="/" onClick={(event) => {handleClick()}}>Delete</Button>
                 </CardActions>
             </Card>
         )
